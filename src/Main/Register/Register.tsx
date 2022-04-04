@@ -10,7 +10,11 @@ import styles from "./styles.module.scss"
 
 const Register = () => {
   const dispatch = useDispatch();
-  const { positions, error, loading } = useSelector((state: RootState) => state.users);
+  const { 
+    positions, 
+    // error, 
+    loading
+  } = useSelector((state: RootState) => state.users);
 
   const [radio, setRadio] = useState<any>(1)
   const [fileSelect, setFileSelect] = useState<any>({})
