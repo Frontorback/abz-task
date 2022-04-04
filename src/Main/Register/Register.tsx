@@ -95,7 +95,7 @@ const Register = () => {
           </div>
           
         </form>
-        {error !== null && alert(error)}
+        {/* {error !== null && alert(error)} */}
     </div>
   )
 }
