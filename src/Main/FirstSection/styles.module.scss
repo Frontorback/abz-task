@@ -1,0 +1,52 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.BackGroung{
+    max-width: rem(1170);
+    height: rem(650);
+    background: url(../../assets/img/Rectangle.svg);
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    .TextBlock{
+        padding-top: rem(164);
+        margin: 0 auto;
+        max-width: rem(380);
+        text-align: center;
+        color: $colorWhite;
+        .TextBlock__header{
+            margin: 0;
+            font-size: rem(40);
+            line-height: rem(40);
+            
+        }
+        .TextBlock__txt{
+            margin: rem(21) 0 rem(32) 0;
+            font-size: rem(16);
+            line-height: rem(26);
+        }
+    }
+    
+}
+@media (max-width: 1024px) {
+    .BackGroung{
+        background: url(../../assets/img/Sec-photo-cover.svg);
+    }
+}
+@media (max-width: 768px) {
+    .BackGroung{
+        height: rem(500);
+        .TextBlock{
+            padding-top: rem(89);
+        }
+    }
+}
+@media (max-width: 360px) {
+    .BackGroung{
+        height: rem(500);
+        .TextBlock{
+            max-width: rem(328);
+            padding-top: rem(40);
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@mixin flr($al: center) {
+    display: flex;
+    flex-direction: row;
+    align-items: $al;
+  }
+@mixin flc {
+    display: flex;
+    flex-direction: column;
+  }
+@function rem($px) {
+  $result: calc($px / 16) + rem;
+  @return $result; 
+}  

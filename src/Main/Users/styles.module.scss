@@ -1,0 +1,95 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.Users{
+    @include flc();
+    align-items: center;
+    padding: rem(140) 0;
+    .Users__Title{
+        margin-bottom: rem(50);
+        font-size: rem(40);
+        line-height: rem(40);
+        text-align: center;
+    }
+
+    .Users__Preloader{
+      animation: spin 1s linear 0s infinite;
+    }
+    .Users__UserBlock{
+        @include flr();
+        max-width: rem(1170);
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: rem(21);
+        
+        .UserBlock_card{
+            @include flc();
+            align-items: center;
+            width: rem(330);
+            height: rem(214);
+            padding: rem(20);
+            margin: 0 rem(29) rem(29) 0;
+            background-color: $colorWhite;
+            border-radius: rem(10);
+            &:nth-child(3n){
+                margin-right: 0;
+            }
+            .Card_img{
+                width: rem(70);
+                height: rem(70);
+                border-radius: rem(40)
+            }
+            .Card_name{
+                margin: rem(20) 0;
+            }
+            .Card_txt{
+                max-width: rem(330);
+                color: $colorBlack;
+                font-size: rem(16);
+                line-height: rem(26);
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                text-align: center;
+
+            }
+        }
+    }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+@media (max-width: 1240px) {
+    .Users .Users__UserBlock .UserBlock_card{
+        width: rem(242);
+    }
+
+}
+@media (max-width: 910px) {
+    .Users .Users__UserBlock .UserBlock_card{
+        width: rem(304);
+        margin: 0 rem(16) rem(16) 0;
+        &:nth-child(3n){
+            margin-right: rem(16);
+        }
+        &:nth-child(2n){
+            margin-right: 0;
+        }
+    }
+
+}
+@media (max-width: 360px) {
+    .Users .Users__UserBlock .UserBlock_card{
+        width: rem(288);
+        margin: 0 rem(16) rem(16) 0;
+        &:nth-child(3n){
+            margin-right: rem(16);
+        }
+        &:nth-child(2n){
+            margin-right: rem(16);
+        }
+    }
+
+}

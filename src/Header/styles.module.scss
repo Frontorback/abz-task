@@ -1,0 +1,36 @@
+@import '../scss/mixins';
+@import '../scss/variables';
+header{
+    background-color: $colorWhite;
+    .headerBlock{
+        @include flr();
+        justify-content: space-between;
+        max-width: rem(1170);
+        margin: 0 auto;
+        padding: rem(13) 0;
+    }
+    .headerBlock__img{
+        width: rem(104);
+    }
+    .headerBlock__btns{
+        a:first-child{
+            margin-right: rem(10);
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    header .headerBlock{
+        margin: 0 rem(60);
+    }
+}
+@media (max-width: 768px) {
+    header .headerBlock{
+        margin: 0 rem(32);
+    }
+}
+@media (max-width: 480px) {
+    header .headerBlock{
+        margin: 0 rem(16);
+    }
+}

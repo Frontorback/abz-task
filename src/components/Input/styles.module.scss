@@ -1,0 +1,66 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.InputItem{
+    width: rem(362);
+    height: rem(50);
+    border-color: $colorGrey3;
+    margin-top: rem(60);
+    padding: 0;
+    padding-left: rem(14);
+    display: flex;
+    align-items: center;
+    border-radius: rem(4);
+    .InputItem__legend{
+        color: $colorGrey4;
+    }
+    .legend_error{
+        color: $colorRed;
+    }
+    .InputItem__input{
+        width: rem(350);
+        border-style: none;
+        background-color: $colorGreyBack;
+        color: $colorBlack;
+        &:focus-visible {
+            outline: none;
+        }
+        &::placeholder{
+            color: $colorGrey4;
+        }
+        &:-webkit-autofill {
+            box-shadow: inset 0 0 0 50px $colorGreyBack;
+        }  
+    }
+
+}
+.InputItem_active{
+    margin-top: rem(50);
+    height: rem(60);
+    border-color: $colorGrey3;
+    .InputItem__input{
+        margin-top: rem(-10);
+    }
+}
+.active_error{
+    border-color: $colorRed
+}
+.errorTxt{
+    margin-left: rem(15);
+    color: $colorRed;
+}
+.HelperText{
+    margin-left: rem(15);
+    color: $colorGrey4;
+}
+
+@media (max-width: 400px) {
+    .InputItem{
+        width: rem(310);
+        .InputItem__input{
+            width: rem(270);
+        }
+    }
+    
+    
+}
