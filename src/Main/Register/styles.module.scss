@@ -10,9 +10,10 @@
       font-size: rem(40);
       line-height: rem(40);
       text-align: center;
+      margin: 0;
     }
     .Register__SelectPos{
-      margin: rem(43) 0 rem(11) 0;
+      margin: rem(22) 0 rem(11) 0;
       color:$colorBlack;
       font-size: rem(16);
       line-height: rem(26);
@@ -23,12 +24,11 @@
     .Register__List{
         @include flc();
         padding: 0;
+        margin: 0;
         .radioBtn {
             display: inline-block;
             position: relative;
             padding: 0;
-            margin-bottom: rem(7);
-
             input[type="radio"] {
               display: none;
             }
@@ -76,7 +76,7 @@
     .Register__Upload {
       @include flr();
   
-      margin: rem(40) auto rem(50) auto;
+      margin: rem(50) auto rem(50) auto;
       cursor: pointer;
   
       .Upload_first {
@@ -130,8 +130,13 @@
 }
 
 @media (max-width: 400px) {
-  .Register .Register__Upload .Upload_second {
-    width: rem(225.5);
+  .Register {
+    .Register__Title{
+      margin: auto rem(16) auto rem(16);
+    }
+    .Register__Upload .Upload_second {
+      width: rem(225.5);
+    }
   }
   
 }

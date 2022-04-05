@@ -2,6 +2,7 @@
 @import '../scss/variables';
 header{
     background-color: $colorWhite;
+    font-family: "Nunito-Regular";  
     .headerBlock{
         @include flr();
         justify-content: space-between;

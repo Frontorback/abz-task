@@ -9,7 +9,7 @@ const Header = () => {
       <div className={styles.headerBlock}>
         <img className={styles.headerBlock__img} src={Logo} alt="logo"/>
         <div className={styles.headerBlock__btns}>
-            <Button txt={"User"} link={"#users"}/>
+            <Button txt={"Users"} link={"#users"}/>
             <Button txt={"Sign Up"} link={"#sign-up"}/>
         </div>
       </div>

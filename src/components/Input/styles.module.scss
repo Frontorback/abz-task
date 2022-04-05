@@ -2,10 +2,10 @@
 @import '../../scss/variables';
 
 .InputItem{
-    width: rem(362);
+    width: rem(358);
     height: rem(50);
     border-color: $colorGrey3;
-    margin-top: rem(60);
+    margin: rem(50) 0 0 0;
     padding: 0;
     padding-left: rem(14);
     display: flex;
@@ -22,6 +22,10 @@
         border-style: none;
         background-color: $colorGreyBack;
         color: $colorBlack;
+        font-family: "Nunito-Regular";
+        font-size: rem(16);
+        line-height: rem(26);
+        padding: 0;
         &:focus-visible {
             outline: none;
         }
@@ -35,7 +39,7 @@
 
 }
 .InputItem_active{
-    margin-top: rem(50);
+    margin-top: rem(40);
     height: rem(60);
     border-color: $colorGrey3;
     .InputItem__input{

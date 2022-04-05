@@ -6,7 +6,7 @@
     align-items: center;
     padding: rem(140) 0;
     .Users__Title{
-        margin-bottom: rem(50);
+        margin: 0  0 rem(50) 0;
         font-size: rem(40);
         line-height: rem(40);
         text-align: center;
@@ -56,6 +56,9 @@
             }
         }
     }
+    a{
+        width: rem(120);
+    }
 }
 @keyframes spin {
     from {transform:rotate(0deg);}
@@ -68,28 +71,40 @@
 
 }
 @media (max-width: 910px) {
-    .Users .Users__UserBlock .UserBlock_card{
-        width: rem(304);
-        margin: 0 rem(16) rem(16) 0;
-        &:nth-child(3n){
-            margin-right: rem(16);
+    .Users .Users__UserBlock{
+        margin-bottom: rem(34);
+        .UserBlock_card{
+            width: rem(304);
+            margin: 0 rem(16) rem(16) 0;
+            &:nth-child(3n){
+                margin-right: rem(16);
+            }
+            &:nth-child(2n){
+                margin-right: 0;
+            }
         }
-        &:nth-child(2n){
-            margin-right: 0;
-        }
-    }
+    } 
 
 }
 @media (max-width: 360px) {
-    .Users .Users__UserBlock .UserBlock_card{
-        width: rem(288);
-        margin: 0 rem(16) rem(16) 0;
-        &:nth-child(3n){
+    .Users {
+        .Users__Title{
             margin-right: rem(16);
+            margin-left: rem(16);
         }
-        &:nth-child(2n){
-            margin-right: rem(16);
-        }
+        .Users__UserBlock{
+            margin-bottom: rem(30);
+            .UserBlock_card{
+                width: rem(288);
+                margin: auto auto rem(20) auto;
+                &:nth-child(3n){
+                    margin-right: auto;
+                }
+                &:nth-child(2n){
+                    margin-right: auto;
+                }
+            }
+        } 
     }
 
 }
