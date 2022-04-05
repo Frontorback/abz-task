@@ -43,6 +43,9 @@ const Register = () => {
     formData.append("photo", fileSelect);
     console.log(txt);
     dispatch(postUser(formData));
+    setRadio(1)
+    setFileSelect({})
+
     dispatch(closeUsers());
     dispatch(getUsers(6));
     reset();
@@ -80,7 +83,7 @@ const Register = () => {
           MinLength={10}
           MaxLength={20}
           register={register}
-          errorsTxt={errors.tel}
+          errorsTxt={errors.phone}
           patternVal={/^\+?3?8?(0[5-9][0-9]\d{7})$/}
           isDirty={watch("phone", false)}
           HelperText={"+38 (XXX) XXX - XX - XX"}
@@ -132,6 +135,7 @@ const Register = () => {
             type="submit"
             value={"Sign up"}
             disabled={!isValid}
+            required
           />
         </div>
       </form>
