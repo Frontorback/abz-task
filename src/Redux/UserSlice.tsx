@@ -57,17 +57,17 @@ export const getPosition = createAsyncThunk(
 
 export const postUser = createAsyncThunk(
     "users/postUser",
-    async function (keys:object, {rejectWithValue}){
-        try {
+    async function (keys:object, {rejectWithValue}){  
+        try {        
             const token = await axios.get(`https://frontend-test-assignment-api.abz.agency/api/v1/token`).then(res => res.data.token)
             const config = {
                 headers: {'Token':token}
             }
             const response = await axios.post('https://frontend-test-assignment-api.abz.agency/api/v1/users', keys, config)
-
+            
             if(response.status !== 200){
                 throw new Error(response.statusText)
-            }
+            }        
         } catch (error:any) {
             return rejectWithValue(error.message)
         }
@@ -118,6 +118,9 @@ const UserSlice = createSlice({
         },
         [getPosition.rejected.type]: setError,
         [postUser.pending.type]: setPending,
+        [postUser.fulfilled.type]: (state) =>{
+            state.loading = false
+        },
         [postUser.rejected.type]: setError,
 
        
