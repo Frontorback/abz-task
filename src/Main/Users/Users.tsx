@@ -31,7 +31,6 @@ const imgSrc = 'https://frontend-test-assignment-api.abz.agency/images/placehold
             <div className={styles.Card_txt}>{key.phone}</div>
           </div>
         ))}
-          
       </div>
       }   
       <Button txt='Show more' onClick={() => dispatch(showMore())} isDisable={isDisable}/>

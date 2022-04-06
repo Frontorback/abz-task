@@ -43,11 +43,11 @@ const Register = () => {
     formData.append("photo", fileSelect);
     console.log(txt);
     dispatch(postUser(formData));
+    
     setRadio(1)
     setFileSelect({})
 
     dispatch(closeUsers());
-    dispatch(getUsers(6));
     reset();
   };
   return (
@@ -136,6 +136,7 @@ const Register = () => {
             value={"Sign up"}
             disabled={!isValid}
             required
+            onClick={() => setTimeout(() => dispatch(getUsers(6)), 2000)}
           />
         </div>
       </form>
