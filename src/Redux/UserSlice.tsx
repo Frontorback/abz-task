@@ -20,7 +20,8 @@ interface IinitialState{
     users: IUsers[],
     positions: IPositions[],
     totalPages: number,
-    loading: boolean,
+    loadingUsers: boolean,
+    loadingPos: boolean,
     error: null | string,
 }
 
@@ -79,13 +80,18 @@ let initialState = {
     users:[],
     positions:[],
     totalPages: 0,
-    loading: false,
+    loadingUsers: false,
+    loadingPos: false,
     error: null,
 
 } as IinitialState
 
-const setPending = (state:any) =>{
-    state.loading = true
+const setUsersPending = (state:any) =>{
+    state.loadingUsers = true
+    state.error = null
+}
+const setPosPending = (state:any) =>{
+    state.loadingPos = true
     state.error = null
 }
 const setError = (state:any, action:any) =>{
@@ -104,22 +110,22 @@ const UserSlice = createSlice({
         },
     },
     extraReducers:{
-        [getUsers.pending.type]: setPending,
+        [getUsers.pending.type]: setUsersPending,
         [getUsers.fulfilled.type]: (state, action) =>{
             state.users = action.payload.users
             state.totalPages = action.payload.total_pages
-            state.loading = false
+            state.loadingUsers = false
         },
         [getUsers.rejected.type]: setError,
-        [getPosition.pending.type]: setPending,
+        [getPosition.pending.type]: setPosPending,
         [getPosition.fulfilled.type]: (state, action) =>{
             state.positions = action.payload
-            state.loading = false
+            state.loadingPos = false
         },
         [getPosition.rejected.type]: setError,
-        [postUser.pending.type]: setPending,
+        [postUser.pending.type]: setUsersPending,
         [postUser.fulfilled.type]: (state) =>{
-            state.loading = false
+            state.loadingUsers = false
         },
         [postUser.rejected.type]: setError,
 

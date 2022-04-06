@@ -9,7 +9,7 @@ import Preloader from "../../assets/img/Preloader.svg"
 
 
 const Users = () => {
-const { users, usersCount, totalPages, loading } = useSelector((state: RootState) => state.users);
+const { users, usersCount, totalPages, loadingUsers } = useSelector((state: RootState) => state.users);
 
 const dispatch = useDispatch();
   useEffect(() =>{
@@ -20,7 +20,7 @@ const imgSrc = 'https://frontend-test-assignment-api.abz.agency/images/placehold
   return (
     <div className={styles.Users} id="users">
       <h2 className={styles.Users__Title}>Working with GET request</h2>
-      {loading ? <img className={styles.Users__Preloader} src={Preloader} alt="Preloader" /> :
+      {loadingUsers ? <img className={styles.Users__Preloader} src={Preloader} alt="Preloader" /> :
       <div className={styles.Users__UserBlock}>
         {users && users.map( (key) =>(
           <div key={key.id} className={styles.UserBlock_card}>

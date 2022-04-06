@@ -17,7 +17,7 @@ const Register = () => {
   const {
     positions,
     // error,
-    loading,
+    loadingPos,
   } = useSelector((state: RootState) => state.users);
 
   const [radio, setRadio] = useState<any>(1);
@@ -43,7 +43,7 @@ const Register = () => {
     formData.append("photo", fileSelect);
     console.log(txt);
     dispatch(postUser(formData));
-    
+
     setRadio(1)
     setFileSelect({})
 
@@ -89,7 +89,7 @@ const Register = () => {
           HelperText={"+38 (XXX) XXX - XX - XX"}
         />
         <h4 className={styles.Register__SelectPos}>Select your position</h4>
-        {loading ? (
+        {loadingPos ? (
           <img
             className={styles.Register__Preloader}
             src={Preloader}
